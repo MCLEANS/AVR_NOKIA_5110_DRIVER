@@ -5,8 +5,8 @@ PORT = usb
 CC = avr-g++
 CFLAGS = -Os -D F_CPU=16000000 -mmcu=$(MCU) 
 LFLAGS = -D F_CPU=16000000 -mmcu=$(MCU)
-SOURCES = SPI.cpp 
-OBJS = SPI.o
+SOURCES = SPI.cpp NOKIA_5110.cpp
+OBJS = SPI.o NOKIA_5110.o
 
 
 
