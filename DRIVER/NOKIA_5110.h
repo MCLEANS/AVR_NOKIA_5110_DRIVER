@@ -145,6 +145,7 @@ class NOKIA_5110 : public SPI{
         bool phase;
         bool polarity;
         bool LSBFIRST;
+
     private:
         void reset_pulse();
         void set_cs_pin();
@@ -157,10 +158,7 @@ class NOKIA_5110 : public SPI{
         void send_char(char data); //sEND ASCII CHARACTER
 
         void set_cursor(uint8_t x, uint8_t y);
-        void normal_mode();
-        void inverted_mode();
-        void clear();
-        
+
     public:
     public:
         NOKIA_5110(volatile uint8_t* CS_PORT,
@@ -175,7 +173,12 @@ class NOKIA_5110 : public SPI{
                     bool LSBFIRST);
         void send_command(char cmd);
         void send_data(char byte);
+        void normal_mode();
+        void inverted_mode();
+        void clear();
         void print(char *data, uint8_t x, uint8_t y);
+
+
 
 };
     
